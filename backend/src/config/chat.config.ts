@@ -1,0 +1,5 @@
+export const CHAT_CONFIG = {
+  MAX_MESSAGE_LENGTH: 2000,
+  MAX_HISTORY_MESSAGES: 20,
+  LLM_TIMEOUT_MS: 15000
+} as const;
