@@ -8,8 +8,16 @@ The app simulates a live chat widget for a fictional ecommerce store, SwiftCart.
 
 - Frontend: SvelteKit, TypeScript, Vite
 - Backend: Node.js, Express, TypeScript
-- Database: PostgreSQL with Prisma
+- Database: Supabase PostgreSQL with Prisma
 - LLM provider: Groq
+
+## Live Demo
+
+Frontend:
+
+```text
+https://spur-ai-live-chat-nu.vercel.app/
+```
 
 ## Features
 
@@ -45,7 +53,7 @@ The app simulates a live chat widget for a fictional ecommerce store, SwiftCart.
 
 ## Environment Variables
 
-Create `backend/.env`:
+Create `backend/.env` from `backend/.env.example`:
 
 ```env
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
@@ -55,7 +63,7 @@ GROQ_MODEL="llama-3.1-8b-instant"
 PORT=5000
 ```
 
-Create `frontend/.env`:
+Create `frontend/.env` from `frontend/.env.example`:
 
 ```env
 VITE_API_URL=http://localhost:5000
@@ -217,11 +225,16 @@ npm run build
 
 ## Deployment Notes
 
-One simple deployment path:
+Current deployment:
+
+- Frontend: Vercel
+- Database: Supabase PostgreSQL
+
+One simple full deployment path:
 
 - Backend: Render
-- Frontend: Vercel or Netlify
-- Database: Supabase PostgreSQL, Neon, or Render PostgreSQL
+- Frontend: Vercel
+- Database: Supabase PostgreSQL
 
 For deployment:
 

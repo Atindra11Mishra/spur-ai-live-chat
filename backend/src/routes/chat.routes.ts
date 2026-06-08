@@ -9,31 +9,31 @@ router.post("/message", async (req, res) => {
   try {
     const { message, sessionId } = req.body;
 
-if (typeof message !== "string") {
-  return res.status(400).json({
-    error: "Message must be a valid text string"
-  });
-}
+    if (typeof message !== "string") {
+      return res.status(400).json({
+        error: "Message must be a valid text string"
+      });
+    }
 
-const trimmedMessage = message.trim();
+    const trimmedMessage = message.trim();
 
-if (trimmedMessage.length === 0) {
-  return res.status(400).json({
-    error: "Message cannot be empty"
-  });
-}
+    if (trimmedMessage.length === 0) {
+      return res.status(400).json({
+        error: "Message cannot be empty"
+      });
+    }
 
-if (trimmedMessage.length > CHAT_CONFIG.MAX_MESSAGE_LENGTH) {
-  return res.status(400).json({
-    error: `Message is too long. Please keep it under ${CHAT_CONFIG.MAX_MESSAGE_LENGTH} characters.`
-  });
-}
+    if (trimmedMessage.length > CHAT_CONFIG.MAX_MESSAGE_LENGTH) {
+      return res.status(400).json({
+        error: `Message is too long. Please keep it under ${CHAT_CONFIG.MAX_MESSAGE_LENGTH} characters.`
+      });
+    }
 
-if (sessionId && typeof sessionId !== "string") {
-  return res.status(400).json({
-    error: "Invalid sessionId"
-  });
-}
+    if (sessionId && typeof sessionId !== "string") {
+      return res.status(400).json({
+        error: "Invalid sessionId"
+      });
+    }
 
     let conversationId = sessionId;
 

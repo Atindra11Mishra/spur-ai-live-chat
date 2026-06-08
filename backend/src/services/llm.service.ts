@@ -16,7 +16,7 @@ Store name: SwiftCart
 Shipping Policy:
 - We ship across India in 3-5 business days.
 - We ship to the USA in 7-12 business days.
-- Free shipping is available on orders above ₹999.
+- Free shipping is available on orders above Rs. 999.
 - Orders are usually dispatched within 24 hours on business days.
 
 Return and Refund Policy:
